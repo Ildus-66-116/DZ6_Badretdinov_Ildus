@@ -35,32 +35,49 @@
 
 //Перестановка
 
-void Peremeshenie(string[] array)
-{
-       for(int j = 0; j < array.Length-1; j++)
-     {
-        string temp = array[j];
-        array[j] = array[j+1];
-        array[j+1] = temp;
-        Console.WriteLine($"[{string.Join(", ", array)}]");
-     }
-}
+// void Peremeshenie(string[] array)
+// {
+//        for(int j = 0; j < array.Length-1; j++)
+//      {
+//         string temp = array[j];
+//         array[j] = array[j+1];
+//         array[j+1] = temp;
+//         Console.WriteLine($"[{string.Join(", ", array)}]");
+//      }
+// }
+
+// Console.Clear();
+// Console.Write("Введите количество элементов: ");
+// int n = int.Parse(Console.ReadLine()!);
+// string[] array = new string[n];
+// for( int i = 0; i < array.Length; i++)
+// {
+//     Console.Write($"Введите {i+1} символ: ");
+//     array[i] = Console.ReadLine();
+// }
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+// Console.WriteLine("Результат: ");
+// int n1 = 1;
+// while(n1 <= n)
+// {
+//     Peremeshenie(array);
+//     n1++;
+// }
+
+// Площадь треугольника
 
 Console.Clear();
-Console.Write("Введите количество элементов: ");
-int n = int.Parse(Console.ReadLine()!);
-string[] array = new string[n];
-for( int i = 0; i < array.Length; i++)
-{
-    Console.Write($"Введите {i+1} символ: ");
-    array[i] = Console.ReadLine();
-}
-Console.WriteLine($"[{string.Join(", ", array)}]");
-Console.WriteLine("Результат: ");
-int n1 = 1;
-while(n1 <= n)
-{
-    Peremeshenie(array);
-    n1++;
-}
-
+Console.Write("Введите x1: ");
+double x1 = double.Parse(Console.ReadLine()!);
+Console.Write("Введите y1: ");
+double y1 = double.Parse(Console.ReadLine()!);
+Console.Write("Введите x2: ");
+double x2 = double.Parse(Console.ReadLine()!);
+Console.Write("Введите y2: ");
+double y2 = double.Parse(Console.ReadLine()!);
+Console.Write("Введите x3: ");
+double x3 = double.Parse(Console.ReadLine()!);
+Console.Write("Введите y3: ");
+double y3 = double.Parse(Console.ReadLine()!);
+double S = (x1 * (y2-y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / -2;
+Console.Write($"({x1} {y1}), ({x2} {y2}), ({x3} {y3}) = > {S}");
