@@ -66,18 +66,29 @@
 
 // Площадь треугольника
 
+// Console.Clear();
+// Console.Write("Введите x1: ");
+// double x1 = double.Parse(Console.ReadLine()!);
+// Console.Write("Введите y1: ");
+// double y1 = double.Parse(Console.ReadLine()!);
+// Console.Write("Введите x2: ");
+// double x2 = double.Parse(Console.ReadLine()!);
+// Console.Write("Введите y2: ");
+// double y2 = double.Parse(Console.ReadLine()!);
+// Console.Write("Введите x3: ");
+// double x3 = double.Parse(Console.ReadLine()!);
+// Console.Write("Введите y3: ");
+// double y3 = double.Parse(Console.ReadLine()!);
+// double S = (x1 * (y2-y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / -2;
+// Console.Write($"({x1} {y1}), ({x2} {y2}), ({x3} {y3}) = > {S}");
+
+// Решение Дениса
+
 Console.Clear();
-Console.Write("Введите x1: ");
-double x1 = double.Parse(Console.ReadLine()!);
-Console.Write("Введите y1: ");
-double y1 = double.Parse(Console.ReadLine()!);
-Console.Write("Введите x2: ");
-double x2 = double.Parse(Console.ReadLine()!);
-Console.Write("Введите y2: ");
-double y2 = double.Parse(Console.ReadLine()!);
-Console.Write("Введите x3: ");
-double x3 = double.Parse(Console.ReadLine()!);
-Console.Write("Введите y3: ");
-double y3 = double.Parse(Console.ReadLine()!);
-double S = (x1 * (y2-y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / -2;
-Console.Write($"({x1} {y1}), ({x2} {y2}), ({x3} {y3}) = > {S}");
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+double a = Math.Sqrt(Math.Pow(size[0] - size[2], 2) + Math.Pow(size[1] - size[3], 2));
+double b = Math.Sqrt(Math.Pow(size[0] - size[4], 2) + Math.Pow(size[1] - size[5], 2));
+double c = Math.Sqrt(Math.Pow(size[4] - size[2], 2) + Math.Pow(size[3] - size[5], 2));
+double p = (a + b + c) / 2;
+double S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+Console.WriteLine($"Результат: {Math.Round(S, 2)}");
